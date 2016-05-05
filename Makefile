@@ -14,10 +14,10 @@ OBJDIR:
 BINDIR:
 		mkdir -p bin
 
-obj/test.o: OBJDIR tests/test.cpp tlsf/tlsf.h tlsf/tlsfbits.h Makefile
+obj/test.o: OBJDIR tests/test.cpp tlsf/tlsf.h Makefile
 		$(GXX) -c $(CFLAGS) -o obj/test.o tests/test.cpp -Itlsf
 
-obj/tlsf.o: OBJDIR tlsf/tlsf.c tlsf/tlsf.h tlsf/tlsfbits.h Makefile
+obj/tlsf.o: OBJDIR tlsf/tlsf.c tlsf/tlsf.h Makefile
 		$(GCC) -c $(CFLAGS) -o obj/tlsf.o tlsf/tlsf.c -Itlsf
 
 $(TARGET): BINDIR $(OBJECTS) Makefile
